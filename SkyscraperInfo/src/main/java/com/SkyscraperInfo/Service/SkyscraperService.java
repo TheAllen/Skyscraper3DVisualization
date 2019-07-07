@@ -10,14 +10,20 @@ import com.SkyscraperInfo.Repository.SkyscraperRepository;
 public class SkyscraperService {	
 	
 	@Autowired
-	private SkyscraperRepository skyscrapperRepository;
+	private SkyscraperRepository skyscraperRepository;
 	
 	
 	public Skyscraper saveAndUpdateBuilding(Skyscraper building) {
 		try {
-			
+			building.setId(building.getId());
+			building = skyscraperRepository.save(building);
+			return building;
 		}catch(Exception e) {
-			
+			throw new RuntimeException(e);
 		}
+	}
+	
+	public Iterable<Skyscraper> findAll() {
+		return skyscraperRepository.findAll();
 	}
 }

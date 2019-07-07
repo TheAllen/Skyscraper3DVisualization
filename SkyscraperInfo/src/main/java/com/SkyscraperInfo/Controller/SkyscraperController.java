@@ -51,4 +51,9 @@ public class SkyscraperController {
 	public ResponseEntity<Skyscraper> getBuildingInfo(@PathVariable("buildingName") String name) {
 		
 	}
+	
+	@GetMapping("/all")
+	public Iterable<Skyscraper> findAllSkyscrapers(){
+		return skyscraperService.findAll();
+	}
 }
