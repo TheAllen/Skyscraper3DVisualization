@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // import { render } from 'react-dom'
 import L from 'leaflet'
 import { Map, Marker, Popup, TileLayer, Circle, CircleMarker, Polygon, Polyline, Rectangle } from 'react-leaflet'
+import {Card, Button, CardTitle, CardText} from 'reactstrap';
+
 import './App.css';
 import Visualization from "./Visualization"
 
@@ -11,49 +13,94 @@ var myIcon = L.icon({
   iconSize: [64, 64],
   iconAnchor: [32, 60],
   popupAnchor: [-10, -90],
-  
+
 });
 
 class App extends Component {
 
-  state = {
-    lat: 40.7331,
-    lng: -73.9902,
-    zoom: 13,
+  constructor() {
+    super();
+
+    this.state = {
+      location: {
+        lat: 40.7331,
+        lng: -73.9902
+      },
+      userLocation: {
+        lat: '',
+        lng: ''
+      },
+      haveUserLocation: false,
+      zoom: 1,
+      city: ""
+    }
+
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.setState({
+        userLocation: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        },
+        haveUsersLocation: true,
+        zoom: 13
+      })
+    })
+
+    console.log(this.state.userLocation);
   }
 
   render() {
-    const position = [this.state.lat, this.state.lng]
+    const position = [this.state.location.lat, this.state.location.lng]
+    const userPosition = [this.state.userLocation.lat, this.state.userLocation.lng]
     // const center = [this.state.lat, this.state.lng]
 
     // const rectangle = [[this.state.lat, -0.08], [this.state.lng, -0.06]]
     return (
-      <Map className='map' center={position} zoom={12}>
-        <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+      <div className='container'>
+        <Map className='map' center={position} zoom={this.state.zoom}>
+          <TileLayer
+            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {(this.state.haveUserLocation) ?
+            <Marker icon={myIcon} position={userPosition}>
+              <Popup onClick={this.clickPopup}>Current Position</Popup>
+            </Marker> : ''
+          }
+          <Marker icon={myIcon} position={position}>
+            <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
+          </Marker>
 
-        <Marker icon={myIcon} position = {position}>
-          <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
-        </Marker>
+          <Circle center={position} fillColor="blue" radius={3500} >
+            <Popup >
+              Click to see a <br /> 3D visualization of Manhattan
+            </Popup>
+          </Circle>
 
-        
-        <Circle center={position} fillColor="blue" radius={3500} >
-          <Popup >
-            Click to see a <br /> 3D visualization of Manhattan
-          </Popup>
-        </Circle>
+          {/* <Rectangle center = {center} bounds={rectangle} color="black" /> */}
+        </Map>
 
+        <Card>
+          <Card.Header>Featured</Card.Header>
+          <Card.Body>
+            <Card.Title>Special title treatment</Card.Title>
+            <Card.Text>
+              With supporting text below as a natural lead-in to additional content.
+    </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
 
-        {/* <Rectangle center = {center} bounds={rectangle} color="black" /> */}
-      </Map>
+      </div>
     )
   }
 
   clickPopup = () => {
     this.setState({
-      zoom:14
+      zoom: 14
     })
   }
 }
