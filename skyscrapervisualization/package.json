@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@esri/react-arcgis": "^4.0.0",
     "bootstrap": "^4.3.1",
     "leaflet": "^1.5.1",
     "mdbreact": "^4.18.0",

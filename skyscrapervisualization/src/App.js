@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import L from 'leaflet'
 import { Map, Marker, Popup, TileLayer, Circle, CircleMarker, Polygon, Polyline, Rectangle } from 'react-leaflet'
 import {Card, Button, CardTitle, CardText} from 'reactstrap';
+import { Map} from '@esri/react-arcgis';
 
 import './App.css';
 import Visualization from "./Visualization"
