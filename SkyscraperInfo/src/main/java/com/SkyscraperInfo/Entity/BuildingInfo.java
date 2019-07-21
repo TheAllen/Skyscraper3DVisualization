@@ -9,18 +9,3 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
-@Entity
-public class BuildingInfo {
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="building")
-	private Skyscraper skyscraper;
-	
-	@NotBlank(message="Name of building cannot be empty")
-	private String name;
-	
-	
-}
