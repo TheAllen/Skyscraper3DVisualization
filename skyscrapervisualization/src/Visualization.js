@@ -4,7 +4,9 @@ class Visualization extends Component {
 
     render() {
         return(
-            <div>3D Visualization Page</div>
+            <div>
+                {console.log("Button is clicked")}
+            </div>
         )
     }
 }

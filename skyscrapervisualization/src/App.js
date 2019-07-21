@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-// import { render } from 'react-dom'
+import { render } from 'react-dom'
 import L from 'leaflet'
 import { Map, Marker, Popup, TileLayer, Circle, CircleMarker, Polygon, Polyline, Rectangle } from 'react-leaflet'
 import {Card, Button, CardTitle, CardText} from 'reactstrap';
-import { Map} from '@esri/react-arcgis';
+import { Map2 } from '@esri/react-arcgis';
 
 import './App.css';
 import Visualization from "./Visualization"
@@ -49,8 +49,18 @@ class App extends Component {
         zoom: 13
       })
     })
-
+    this.onClickMarker = this.onClickMarker.bind(this);
     console.log(this.state.userLocation);
+    
+  }
+
+  onClickMarker (){
+    return (
+      
+        <Visualization/>
+      
+    )
+    
   }
 
   render() {
@@ -71,12 +81,12 @@ class App extends Component {
               <Popup onClick={this.clickPopup}>Current Position</Popup>
             </Marker> : ''
           }
-          <Marker icon={myIcon} position={position}>
+          <Marker icon={myIcon} position={position} >
             <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
           </Marker>
 
-          <Circle center={position} fillColor="blue" radius={3500} >
-            <Popup >
+          <Circle center={position} fillColor="blue" radius={3500} onClick = {this.onClickMarker}>
+            <Popup center={position}>
               Click to see a <br /> 3D visualization of Manhattan
             </Popup>
           </Circle>
@@ -84,7 +94,7 @@ class App extends Component {
           {/* <Rectangle center = {center} bounds={rectangle} color="black" /> */}
         </Map>
 
-        <Card>
+        {/* <Card>
           <Card.Header>Featured</Card.Header>
           <Card.Body>
             <Card.Title>Special title treatment</Card.Title>
@@ -93,7 +103,7 @@ class App extends Component {
     </Card.Text>
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
-        </Card>
+        </Card> */}
 
       </div>
     )
