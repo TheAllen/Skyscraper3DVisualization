@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom'
 import L from 'leaflet'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Map, Marker, Popup, TileLayer, Circle, CircleMarker, Polygon, Polyline, Rectangle } from 'react-leaflet'
-import {Card, Button, CardTitle, CardText} from 'reactstrap';
+import { Card, Button, CardTitle, CardText } from 'reactstrap';
 import { Map2 } from '@esri/react-arcgis';
 
 import './App.css';
@@ -51,17 +52,18 @@ class App extends Component {
     })
     this.onClickMarker = this.onClickMarker.bind(this);
     console.log(this.state.userLocation);
-    
+
   }
 
-  onClickMarker (){
+  onClickMarker() {
     return (
-      
-        <Visualization/>
-      
+
+      <Visualization />
+
     )
-    
+
   }
+
 
   render() {
     const position = [this.state.location.lat, this.state.location.lng]
@@ -70,31 +72,33 @@ class App extends Component {
 
     // const rectangle = [[this.state.lat, -0.08], [this.state.lng, -0.06]]
     return (
-      <div className='container'>
-        <Map className='map' center={position} zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {(this.state.haveUserLocation) ?
-            <Marker icon={myIcon} position={userPosition}>
-              <Popup onClick={this.clickPopup}>Current Position</Popup>
-            </Marker> : ''
-          }
-          <Marker icon={myIcon} position={position} >
-            <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
-          </Marker>
+      <Router>
+        <div className='container'>
+          <Route exact path="/arcgismap" component={Visualization}></Route>
+          <Map className='map' center={position} zoom={this.state.zoom}>
+            <TileLayer
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {(this.state.haveUserLocation) ?
+              <Marker icon={myIcon} position={userPosition}>
+                <Popup onClick={this.clickPopup}>Current Position</Popup>
+              </Marker> : ''
+            }
+            <Marker icon={myIcon} position={position} >
+              <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
+            </Marker>
 
-          <Circle center={position} fillColor="blue" radius={3500} onClick = {this.onClickMarker}>
-            <Popup center={position}>
-              Click to see a <br /> 3D visualization of Manhattan
+            <Circle center={position} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
+              <Popup center={position}>
+                Click to see a <br /> 3D visualization of Manhattan
             </Popup>
-          </Circle>
+            </Circle>
 
-          {/* <Rectangle center = {center} bounds={rectangle} color="black" /> */}
-        </Map>
+            {/* <Rectangle center = {center} bounds={rectangle} color="black" /> */}
+          </Map>
 
-        {/* <Card>
+          {/* <Card>
           <Card.Header>Featured</Card.Header>
           <Card.Body>
             <Card.Title>Special title treatment</Card.Title>
@@ -105,7 +109,9 @@ class App extends Component {
           </Card.Body>
         </Card> */}
 
-      </div>
+        </div>
+
+      </Router>
     )
   }
 
