@@ -9,3 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
+@Entity
+public class BuildingInfo {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@NotBlank(message="Building name cannot be null")
+	private String buildingName;
+	
+	
+}
