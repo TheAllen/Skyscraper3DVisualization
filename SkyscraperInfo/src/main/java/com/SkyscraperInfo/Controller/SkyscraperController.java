@@ -18,4 +18,9 @@ import com.SkyscraperInfo.Entity.Skyscraper;
 import com.SkyscraperInfo.Service.MapValidationService;
 import com.SkyscraperInfo.Service.SkyscraperService;
 
-
+@RestController
+@RequestMapping(path = "/api/map")
+public class SkyscraperController {
+	
+	
+}

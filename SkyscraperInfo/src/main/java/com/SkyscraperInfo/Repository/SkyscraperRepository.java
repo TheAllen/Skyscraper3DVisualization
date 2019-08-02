@@ -5,3 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.SkyscraperInfo.Entity.Skyscraper;
 
+public interface SkyscraperRepository extends CrudRepository<Skyscraper, Long> {
+
+}
