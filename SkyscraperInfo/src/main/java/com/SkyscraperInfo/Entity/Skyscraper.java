@@ -11,29 +11,7 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Skyscraper {
-
-	@NotBlank(message="Skyscraper must have a name")
-	private String skyscraperName;
-	
-	@OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-	private BuildingInfo buildingInfo;
-
-	public String getSkyscraperName() {
-		return skyscraperName;
-	}
-
-	public void setSkyscraperName(String skyscraperName) {
-		this.skyscraperName = skyscraperName;
-	}
-
-	public BuildingInfo getBuildingInfo() {
-		return buildingInfo;
-	}
-
-	public void setBuildingInfo(BuildingInfo buildingInfo) {
-		this.buildingInfo = buildingInfo;
-	}
+public class Skyscraper extends Building {
 	
 	
 }

@@ -16,7 +16,7 @@ var myIcon = L.icon({
 
 });
 
-class mainMap extends Component {
+class MainMap extends Component {
 
     constructor() {
         super();
@@ -48,8 +48,8 @@ class mainMap extends Component {
                 zoom: 13
             })
         })
-        this.onClickMarker = this.onClickMarker.bind(this);
-        console.log(this.state.userLocation);
+        
+        console.log(this.state.location);
     }
 
     render() {
@@ -58,29 +58,30 @@ class mainMap extends Component {
         const userPosition = [this.state.userLocation.lat, this.state.userLocation.lng]
 
         return (
+            <div className="Container">
+                <Map className='map' center={position} zoom={this.state.zoom}>
+                    <TileLayer
+                        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    {(this.state.haveUserLocation) ?
+                        <Marker icon={myIcon} position={userPosition}>
+                            <Popup onClick={this.clickPopup}>Current Position</Popup>
+                        </Marker> : ''
+                    }
+                    <Marker icon={myIcon} position={position} >
+                        <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
+                    </Marker>
 
-            <Map className='map' center={position} zoom={this.state.zoom}>
-                <TileLayer
-                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {(this.state.haveUserLocation) ?
-                    <Marker icon={myIcon} position={userPosition}>
-                        <Popup onClick={this.clickPopup}>Current Position</Popup>
-                    </Marker> : ''
-                }
-                <Marker icon={myIcon} position={position} >
-                    <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
-                </Marker>
-
-                <Circle center={position} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
-                    <Popup center={position}>
-                        Click to see a <br /> 3D visualization of Manhattan
+                    <Circle center={position} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
+                        <Popup center={position}>
+                            Click to see a <br /> 3D visualization of Manhattan
             </Popup>
-                </Circle>
+                    </Circle>
 
 
-            </Map>
+                </Map>
+            </div>
 
 
 
@@ -88,4 +89,4 @@ class mainMap extends Component {
     }
 }
 
-export default mainMap;
+export default MainMap;
