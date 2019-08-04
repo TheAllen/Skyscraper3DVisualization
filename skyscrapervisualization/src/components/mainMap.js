@@ -4,7 +4,7 @@ import L from 'leaflet'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Map, Marker, Popup, TileLayer, Circle, CircleMarker, Polygon, Polyline, Rectangle } from 'react-leaflet'
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
-import { Map2 } from '@esri/react-arcgis';
+
 
 import '../App.css'
 
@@ -52,13 +52,17 @@ class MainMap extends Component {
         console.log(this.state.location);
     }
 
+    onClickVisualization = () => {
+
+    }
+
     render() {
 
         const position = [this.state.location.lat, this.state.location.lng]
         const userPosition = [this.state.userLocation.lat, this.state.userLocation.lng]
 
         return (
-            <div className="Container">
+            <div className="App">
                 <Map className='map' center={position} zoom={this.state.zoom}>
                     <TileLayer
                         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -69,7 +73,7 @@ class MainMap extends Component {
                             <Popup onClick={this.clickPopup}>Current Position</Popup>
                         </Marker> : ''
                     }
-                    <Marker icon={myIcon} position={position} >
+                    <Marker icon={myIcon} position={position} onClick = {this.onClickVisualization}>
                         <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
                     </Marker>
 
