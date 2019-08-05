@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom'
-import L from 'leaflet'
+import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
+import L from 'leaflet';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Map, Marker, Popup, TileLayer, Circle, CircleMarker, Polygon, Polyline, Rectangle } from 'react-leaflet'
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
@@ -48,12 +49,13 @@ class MainMap extends Component {
                 zoom: 13
             })
         })
-        
+
         console.log(this.state.location);
     }
 
     onClickVisualization = () => {
-
+        const path = '/visual';
+        this.props.history.push(path);
     }
 
     render() {
@@ -73,9 +75,12 @@ class MainMap extends Component {
                             <Popup onClick={this.clickPopup}>Current Position</Popup>
                         </Marker> : ''
                     }
-                    <Marker icon={myIcon} position={position} onClick = {this.onClickVisualization}>
+
+
+                    <Marker icon={myIcon} position={position} onClick={this.onClickVisualization}>
                         <Popup onClick={this.clickPopup}>Manhattan, New York!</Popup>
                     </Marker>
+
 
                     <Circle center={position} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
                         <Popup center={position}>
