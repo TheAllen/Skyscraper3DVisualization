@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,5 +37,13 @@ public class RestaurantController {
 		Restaurant restaurantInfo = restaurantService.addRestaurant(restaurant);
 		
 		return new ResponseEntity<Restaurant> (restaurantInfo, HttpStatus.CREATED);
+	}
+	
+	@GetMapping(path="/all")
+	public ResponseEntity<?> findAllRestaurants(){
+		
+		Iterable<Restaurant> list = restaurantService.findAllRestaurants();
+		
+		return new ResponseEntity<Iterable<Restaurant>>(list, HttpStatus.OK);
 	}
 }

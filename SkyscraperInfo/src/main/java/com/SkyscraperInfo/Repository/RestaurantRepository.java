@@ -8,4 +8,5 @@ import com.SkyscraperInfo.Entity.Restaurant;
 @Repository
 public interface RestaurantRepository extends CrudRepository<Restaurant, Long> {
 	
+	
 }

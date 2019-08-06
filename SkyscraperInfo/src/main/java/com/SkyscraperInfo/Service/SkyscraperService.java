@@ -9,4 +9,11 @@ import com.SkyscraperInfo.Repository.SkyscraperRepository;
 @Service
 public class SkyscraperService {
 	
+	@Autowired
+	private SkyscraperRepository skyscraperRepository;
+	
+	public Skyscraper addSkyscraper(Skyscraper skyscraper) {
+		Skyscraper s = skyscraperRepository.save(skyscraper);
+		return s;
+	}
 }

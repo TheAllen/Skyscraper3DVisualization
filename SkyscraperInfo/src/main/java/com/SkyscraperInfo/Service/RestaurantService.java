@@ -1,5 +1,7 @@
 package com.SkyscraperInfo.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,10 @@ public class RestaurantService {
 	public Restaurant addRestaurant(Restaurant restaurant) {
 		Restaurant r = restaurantRepository.save(restaurant);
 		return r;
+	}
+	
+	public Iterable<Restaurant> findAllRestaurants(){
+		
+		return restaurantRepository.findAll();
 	}
 }
