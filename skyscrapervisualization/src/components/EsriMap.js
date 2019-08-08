@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
-import { Map, Scene } from '@esri/react-arcgis'
+import { Map, Scene, WebMap, WebScene, SceneView } from '@esri/react-arcgis'
+
 
 import '../App.css';
 
 class EsriMap extends Component {
+
+    constructor () {
+        super();
+
+        this.switchView = this.switchView.bind(this);
+    }
 
     render() {
 
@@ -26,27 +33,10 @@ class EsriMap extends Component {
         )
     }
 
-    switchView = () => {
-        var is3D = appConfig.activeView.type === "3d";
+    switchView() {
 
-        // remove the reference to the container for the previous view
-        appConfig.activeView.container = null;
-
-        if (is3D) {
-            // if the input view is a SceneView, set the viewpoint on the
-            // mapView instance. Set the container on the mapView and flag
-            // it as the active view
-            appConfig.mapView.viewpoint = appConfig.activeView.viewpoint.clone();
-            appConfig.mapView.container = appConfig.container;
-            appConfig.activeView = appConfig.mapView;
-            switchButton.value = "3D";
-        } else {
-            appConfig.sceneView.viewpoint = appConfig.activeView.viewpoint.clone();
-            appConfig.sceneView.container = appConfig.container;
-            appConfig.activeView = appConfig.sceneView;
-            switchButton.value = "2D";
-        }
     }
+
 }
 
 export default EsriMap;
