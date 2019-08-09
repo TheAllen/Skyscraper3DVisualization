@@ -1,12 +1,23 @@
 package com.SkyscraperInfo.Exception;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
 @RestController
 public class CustomResponseException extends ResponseEntityExceptionHandler {
 	
+	@ExceptionHandler
+	public final ResponseEntity<Object> handleBuildingInfoException (BuildingInfoException ex, WebRequest request) {
+		
+		BuildingInfoExceptionResponse exception = new BuildingInfoExceptionResponse(ex.getMessage());
+		
+		return new ResponseEntity<Object>(exception, HttpStatus.BAD_REQUEST);
+	}
 	
 }
