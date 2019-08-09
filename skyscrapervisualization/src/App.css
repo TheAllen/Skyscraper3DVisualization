@@ -22,10 +22,10 @@ body {
   height: 100%;
 }
 
-.wrldMap {
-  width: 100%;
+.mapbox {
+  width: 100vw;
   height : 100%;
-  background-color: #000000;
+
 }
 
 .recenterButton {

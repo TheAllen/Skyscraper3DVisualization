@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom'
-import L from 'leaflet'
 import {Map} from '@esri/react-arcgis'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
@@ -9,7 +8,8 @@ import './App.css';
 import MainMap from './components/MainMap'
 import Visualization from "./Visualization"
 import EsriMap from './components/EsriMap'
-import WrldMap from './components/wrldMap'
+import BoxMap from './components/mapBox'
+
 
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
           <Route exact path = "/" component = {MainMap} ></Route>
           <Route exact path = "/map" component = {MainMap}></Route>
           <Route exact path="/visual" component = {EsriMap} ></Route>
-          <Route exact path="/wrldmap" component = {WrldMap}></Route>
+          <Route exact path="/mapbox" component = {BoxMap}></Route>
         </Router>
         
           
