@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import {Map} from '@esri/react-arcgis'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
-
+import 'mapbox-gl/dist/mapbox-gl.css';
 import './App.css';
 import MainMap from './components/MainMap'
 import Visualization from "./Visualization"

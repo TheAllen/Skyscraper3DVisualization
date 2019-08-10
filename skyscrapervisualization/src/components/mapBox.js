@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactMapGL from 'react-map-gl'
+import 'mapbox-gl/dist/mapbox-gl.css';
 import '../App.css';
 
 const TOKEN = 'pk.eyJ1IjoibGlsaTYwNTMiLCJhIjoiY2p6M3Fvbjl6MDUxeTNjbnF2Y280cWo0MCJ9.VJiRG8Mfg1Ccqo4SdI6nNg'
