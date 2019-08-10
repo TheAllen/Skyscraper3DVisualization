@@ -8,7 +8,7 @@ import './App.css';
 import MainMap from './components/MainMap'
 import Visualization from "./Visualization"
 import EsriMap from './components/EsriMap'
-import BoxMap from './components/mapBox'
+import SceneViewNewYork from './components/SceneViewNewYork'
 
 
 
@@ -20,7 +20,7 @@ class App extends Component {
           <Route exact path = "/" component = {MainMap} ></Route>
           <Route exact path = "/map" component = {MainMap}></Route>
           <Route exact path="/visual" component = {EsriMap} ></Route>
-          <Route exact path="/mapbox" component = {BoxMap}></Route>
+          <Route exact path="/sceneview" component = {SceneViewNewYork}></Route>
         </Router>
         
           
