@@ -11,6 +11,8 @@ public class Restaurant extends Building {
 	
 	private String restaurantDescription;
 	
+	private String restaurantID;
+	
 	public int getRating() {
 		return rating;
 	}
@@ -25,6 +27,14 @@ public class Restaurant extends Building {
 
 	public void setRestaurantDescription(String restaurantDescription) {
 		this.restaurantDescription = restaurantDescription;
+	}
+
+	public String getRestaurantID() {
+		return restaurantID;
+	}
+
+	public void setRestaurantID(String restaurantID) {
+		this.restaurantID = restaurantID;
 	}
 
 	
