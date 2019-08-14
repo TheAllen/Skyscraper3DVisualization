@@ -85,6 +85,11 @@ class MainMap extends Component {
         this.props.history.push(path);
     }
 
+    onSceneViewLyon = () => {
+        const path = '/lyon';
+        this.props.history.push(path);
+    }
+
     render() {
 
         const position = [this.state.location.lat, this.state.location.lng]
@@ -93,6 +98,7 @@ class MainMap extends Component {
 
         const genevaLatLng = [46.2044, 6.1432]
         const lucerneLatLng = [47.0502, 8.3093]
+        const lyonLatLng = [45.7640, 4.8357]
 
         return (
             <div className="App">
@@ -131,9 +137,9 @@ class MainMap extends Component {
                     <Marker icon={myIcon} position={lucerneLatLng} onClick={this.onSceneViewLucerne}>
                         <Popup onClick={this.clickPopup}>Lucerne, Switzerland</Popup>
                     </Marker>
-                    <Circle center={parisLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
+                    <Circle center={lucerneLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
                         <Popup center={position}>
-                            Click to see a <br /> 3D visualization of Paris
+                            Click to see a <br /> 3D visualization of Lucerne
                         </Popup>
                     </Circle>
 
@@ -141,9 +147,18 @@ class MainMap extends Component {
                     <Marker icon={myIcon} position={genevaLatLng} onClick={this.onSceneViewGeneva}>
                         <Popup onClick={this.clickPopup}>Geneva, Switzerland</Popup>
                     </Marker>
-                    <Circle center={parisLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
+                    <Circle center={genevaLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
                         <Popup center={position}>
-                            Click to see a <br /> 3D visualization of Paris
+                            Click to see a <br /> 3D visualization of Geneva
+                        </Popup>
+                    </Circle>
+
+                    <Marker icon={myIcon} position={lyonLatLng} onClick={this.onSceneViewLyon}>
+                        <Popup onClick={this.clickPopup}>Lyon, France</Popup>
+                    </Marker>
+                    <Circle center={lyonLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
+                        <Popup center={position}>
+                            Click to see a <br /> 3D visualization of Lyon
                         </Popup>
                     </Circle>
 

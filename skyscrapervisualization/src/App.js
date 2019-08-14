@@ -8,7 +8,7 @@ import './App.css';
 import MainMap from './components/MainMap'
 import Visualization from "./Visualization"
 import EsriMap from './components/EsriMap'
-import SceneViewNewYork, { SceneViewParis, SceneViewLucerne, SceneViewGeneva } from './components/SceneViewNewYork'
+import SceneViewNewYork, { SceneViewParis, SceneViewLucerne, SceneViewGeneva, SceneViewLyon } from './components/SceneViewNewYork'
 
 
 
@@ -22,8 +22,9 @@ class App extends Component {
           <Route exact path="/visual" component = {EsriMap} ></Route>
           <Route exact path="/newyork" component = {SceneViewNewYork}></Route>
           <Route exact path="/paris" component = {SceneViewParis}></Route>
-          <Route exact path="/lucerne" component = {SceneViewLucerne}></Route>
+          {/* <Route exact path="/lucerne" component = {SceneViewLucerne}></Route> */}
           <Route exact path="/geneva" component = {SceneViewGeneva}></Route>
+          <Route exact path="/lyon" component = {SceneViewLyon}></Route>
         </Router>
         
           
