@@ -12,3 +12,6 @@ Java Spring Boot for RESTful web service.
 
 ## 3D Visualization of Mid-town, Manhattan
 
+![nyc](https://user-images.githubusercontent.com/12507966/63139181-92300480-bf9a-11e9-9daa-37a8025870e9.png)
+
+
