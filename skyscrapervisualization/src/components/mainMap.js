@@ -59,6 +59,8 @@ class MainMap extends Component {
         })
 
         console.log(this.state.location);
+
+
     }
 
     onClickVisualization = () => {
@@ -134,6 +136,10 @@ class MainMap extends Component {
                         </Nav>
                     </Collapse>
                 </Navbar>
+
+
+
+
                 <Map className='map' center={position} zoom={this.state.zoom}>
                     <TileLayer
                         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -196,6 +202,13 @@ class MainMap extends Component {
 
 
                 </Map>
+
+                {/* Message Card */}
+                <Card body className="message-form">
+                    <CardTitle>Welcome to City 3D</CardTitle>
+                    <CardText>What's your favorite city in the world?</CardText>
+                    <Button>Submit</Button>
+                </Card>
             </div>
 
 
