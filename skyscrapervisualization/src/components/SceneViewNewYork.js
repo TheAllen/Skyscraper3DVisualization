@@ -56,9 +56,17 @@ export class SceneViewParis extends Component {
 export class SceneViewGeneva extends Component {
     render() {
         return (
-            <SceneView id="paris">
-                <Scene portalItem={{ id: ID_GENEVA }}></Scene>
-            </SceneView>
+            <div>
+                <SceneView id="geneva">
+                    <Scene portalItem={{ id: ID_GENEVA }}></Scene>
+                </SceneView>
+
+                <Card body className="city-message-form">
+                    <CardTitle>A 3D View of Geneva! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
+                    <Button>Submit</Button>
+                </Card>
+            </div>
         )
     }
 }
@@ -66,9 +74,17 @@ export class SceneViewGeneva extends Component {
 export class SceneViewLucerne extends Component {
     render() {
         return (
-            <SceneView id="paris">
-                <Scene portalItem={{ id: ID_LUCERNE }}></Scene>
-            </SceneView>
+            <div className="App">
+                <SceneView id="lucerne">
+                    <Scene portalItem={{ id: ID_LUCERNE }}></Scene>
+                </SceneView>
+
+                <Card body className="city-message-form">
+                    <CardTitle>A 3D View of Lucerne! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
+                    <Button>Submit</Button>
+                </Card>
+            </div>
         )
     }
 }
@@ -76,9 +92,18 @@ export class SceneViewLucerne extends Component {
 export class SceneViewLyon extends Component {
     render() {
         return (
-            <SceneView id="lyon">
-                <Scene portalItem={{ id: ID_LYON }}></Scene>
-            </SceneView>
+            <div className="App">
+                <SceneView id="lyon">
+                    <Scene portalItem={{ id: ID_LYON }}></Scene>
+                </SceneView>
+
+                <Card body className="city-message-form">
+                    <CardTitle>A 3D View of Manhattan! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
+                    <Button>Submit</Button>
+                </Card>
+
+            </div>
         )
     }
 }
