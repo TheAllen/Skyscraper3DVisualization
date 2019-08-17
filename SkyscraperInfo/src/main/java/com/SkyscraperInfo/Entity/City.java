@@ -1,13 +1,12 @@
 package com.SkyscraperInfo.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
 
-@Entity
-@Table(schema = "users")
+@MappedSuperclass
 public class City {
 
-	
+	@NotBlank(message="City identifier can't be blank")
 	private String cityIdentifier;
 
 	private String cityMessage;

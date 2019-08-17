@@ -1,13 +1,13 @@
 package com.SkyscraperInfo.Entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotBlank;
 
-@MappedSuperclass
-public class Building {
+@Entity
+public class Building extends City {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
