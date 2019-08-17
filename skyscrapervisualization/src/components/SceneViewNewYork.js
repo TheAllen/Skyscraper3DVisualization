@@ -98,7 +98,7 @@ export class SceneViewLyon extends Component {
                 </SceneView>
 
                 <Card body className="city-message-form">
-                    <CardTitle>A 3D View of Manhattan! </CardTitle>
+                    <CardTitle>A 3D View of Lyon! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button>Submit</Button>
                 </Card>
