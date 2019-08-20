@@ -16,4 +16,8 @@ public class SkyscraperService {
 		Skyscraper s = skyscraperRepository.save(skyscraper);
 		return s;
 	}
+	
+	public Iterable<Skyscraper> getAll() {
+		return skyscraperRepository.findAll();
+	}
 }

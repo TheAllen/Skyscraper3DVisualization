@@ -45,4 +45,11 @@ public class SkyscraperController {
 		
 		return new ResponseEntity<Skyscraper> (newSkyscraper, HttpStatus.CREATED);
 	}
+	
+	@RequestMapping(path = "/all", method = RequestMethod.GET)
+	public ResponseEntity<?> getAllSkyscrapers() {
+		Iterable<Skyscraper> all = skyscraperService.getAll();
+		
+		return new ResponseEntity<Iterable<Skyscraper>> (all, HttpStatus.OK);
+	}
 }

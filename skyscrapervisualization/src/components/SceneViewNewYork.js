@@ -4,6 +4,8 @@ import { Card, Button, CardText, CardTitle } from 'reactstrap';
 
 import { createMessage } from '../Actions/messageAction';
 
+import axios from "axios";
+
 const ID = 'a0f52995be7d42c1ba9a2b570570feb5' //Original NY
 const IDNY = '9a542f6755274436985617a462ffdf44'
 const NY_EXAMPLE = 'd50983f1314141bfb6d57c6f83f2690e'
@@ -32,19 +34,15 @@ class SceneViewNewYork extends Component {
             funFacts: ""
         }
 
-        this.onSubmit = this.onSubmit.bind(this);
+        //this.onSubmit = this.onSubmit.bind(this);
     }
 
-    exampleButton = () => {
-
-    }
 
     onSubmit(e){
         e.preventDefault();
         const newBuilding = {
             cityIdentifier: "New York",
             cityMessage: "New York is my favorite City",
-            id: 1,
             name: "One World Trade Center",
             city: "New York City",
             state: "New York",
@@ -54,7 +52,15 @@ class SceneViewNewYork extends Component {
             floors: 104,
             funFacts: "One World Trade Center is the main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City"
         }
-        createMessage(newBuilding, this.props.history);
+        // createMessage(newBuilding, this.props.history);
+
+        axios.post('http://localhost:8080/api/skyscraper/', newBuilding)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(error => {
+                console.log(error.response)
+            })
     }
 
     render() {
@@ -62,7 +68,7 @@ class SceneViewNewYork extends Component {
             <div className="App">
                 <SceneView id="newyork">
                     <Scene portalItem={{ id: IDNY }}>
-                        <Layer id="building" layerType="scene" url={"8be4db26e0784d919923fd91f6cc9882"}></Layer>
+                        
 
                     </Scene>
                 </SceneView>
