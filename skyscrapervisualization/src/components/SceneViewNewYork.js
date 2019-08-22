@@ -15,7 +15,7 @@ const ID_GENEVA = 'c6f90b19164c4283884361005faea852'
 const ID_LUCERNE = '6043821c854345e4b6d56c9b0765079d'
 const ID_LYON = 'ba138a72546a46faa94983a4f0eceb95'
 
-class SceneViewNewYork extends Component {
+export class SceneViewNewYork extends Component {
 
     constructor() {
         super();
@@ -38,11 +38,11 @@ class SceneViewNewYork extends Component {
     }
 
 
-    onSubmit(e){
+    onSubmit(e) {
         e.preventDefault();
         const newBuilding = {
             cityIdentifier: "New York",
-            cityMessage: "New York is my favorite City",
+            cityMessage: "New York is my favorite City(Edit 1)",
             name: "One World Trade Center",
             city: "New York City",
             state: "New York",
@@ -57,6 +57,7 @@ class SceneViewNewYork extends Component {
         axios.post('http://localhost:8080/api/skyscraper/', newBuilding)
             .then(res => {
                 console.log(res);
+                this.history.push("/");
             })
             .catch(error => {
                 console.log(error.response)
@@ -68,12 +69,12 @@ class SceneViewNewYork extends Component {
             <div className="App">
                 <SceneView id="newyork">
                     <Scene portalItem={{ id: IDNY }}>
-                        
+
 
                     </Scene>
                 </SceneView>
 
-                <Card body className="city-message-form" onSubmit={this.onSubmit}>
+                <Card body className="city-message-form">
                     <CardTitle>A 3D View of Manhattan! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
@@ -90,19 +91,18 @@ export class SceneViewParis extends Component {
         super();
     }
 
-    onSubmit(e){
+    onSubmit(e) {
         e.preventDefault();
         const newBuilding = {
-            cityIdentifier: "PARIS",
-            cityMessage: "Paris is my favorite City",
-            name: "Eiffel Tower",
+            name: "Louvre Musuem",
             city: "Paris",
-            state: "",
-            address: null,
-            buildingDescription: null,
-            height: 1063,
-            floors: 3,
-            funFacts: "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower."
+            state: "New York",
+            rating: 5,
+            height: 1792,
+            floors: 104,
+            funFacts: "Notre Dame is known as The Old lady",
+            cityIdentifier: "PARIS",
+            cityMessage: "Paris is my favorite City"
         }
         // createMessage(newBuilding, this.props.history);
 
@@ -122,7 +122,7 @@ export class SceneViewParis extends Component {
                     <Scene portalItem={{ id: ID_PARIS }}></Scene>
                 </SceneView>
 
-                <Card body className="city-message-form" onSubmit={this.onSubmit}>
+                <Card body className="city-message-form">
                     <CardTitle>A 3D View of Paris! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
@@ -151,6 +151,16 @@ export class SceneViewGeneva extends Component {
 }
 
 export class SceneViewLucerne extends Component {
+
+    constructor() {
+        super();
+    }
+
+    onSubmit(e) {
+
+    }
+
+
     render() {
         return (
             <div className="App">
@@ -169,6 +179,49 @@ export class SceneViewLucerne extends Component {
 }
 
 export class SceneViewLyon extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            cityIdentifier: "New York",
+            cityMessage: "New York is my favorite City",
+            id: 1,
+            name: "One World Trade Center",
+            city: "New York City",
+            state: "New York",
+            address: null,
+            buildingDescription: null,
+            height: 0,
+            floors: 0,
+            funFacts: ""
+        }
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        const newCity = {
+            cityIdentifier: "LYON",
+            cityMessage: "Lyon is one of my favorite Cities",
+            name: "Eiffel Tower",
+            city: "Paris",
+            state: "",
+            address: null,
+            buildingDescription: null,
+            height: 1063,
+            floors: 3,
+            funFacts: "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower."
+        }
+
+        axios.post('http://localhost:8080/api/skyscraper/', newCity)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(error => {
+                console.log(error.response)
+            })
+    }
+
     render() {
         return (
             <div className="App">
@@ -176,10 +229,10 @@ export class SceneViewLyon extends Component {
                     <Scene portalItem={{ id: ID_LYON }}></Scene>
                 </SceneView>
 
-                <Card body className="city-message-form">
+                <Card body className="city-message-form" >
                     <CardTitle>A 3D View of Lyon! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
-                    <Button>Submit</Button>
+                    <Button onClick={this.onSubmit}>Submit</Button>
                 </Card>
 
             </div>
@@ -187,5 +240,5 @@ export class SceneViewLyon extends Component {
     }
 }
 
-export default SceneViewNewYork;
+
 

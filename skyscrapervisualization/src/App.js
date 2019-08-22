@@ -8,7 +8,7 @@ import './App.css';
 import MainMap from './components/MainMap'
 import Visualization from "./Visualization"
 import EsriMap from './components/EsriMap'
-import SceneViewNewYork, { SceneViewParis, SceneViewLucerne, SceneViewGeneva, SceneViewLyon } from './components/SceneViewNewYork'
+import {SceneViewNewYork, SceneViewParis, SceneViewLucerne, SceneViewGeneva, SceneViewLyon } from './components/SceneViewNewYork'
 
 
 
