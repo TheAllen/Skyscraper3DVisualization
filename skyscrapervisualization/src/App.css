@@ -36,10 +36,15 @@ body {
 }
 
 .city-message-form {
+  width: 375px;
   z-index: 999;
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.cityMessage {
+  margin-top: 15px;
 }
 
 .recenterButton {

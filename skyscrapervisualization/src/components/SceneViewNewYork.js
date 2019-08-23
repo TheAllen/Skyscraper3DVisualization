@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { SceneView, Scene, Layer, S } from 'react-sceneview';
-import { Card, Button, CardText, CardTitle } from 'reactstrap';
+import { Card, Button, CardText, CardTitle, Form, FormGroup, Label, Input } from 'reactstrap';
 
 import { createMessage } from '../Actions/messageAction';
 
@@ -37,8 +37,12 @@ export class SceneViewNewYork extends Component {
         //this.onSubmit = this.onSubmit.bind(this);
     }
 
+    onChange = (e) => {
 
-    onSubmit(e) {
+    } 
+
+
+    onSubmit = (e) => {
         e.preventDefault();
         const newBuilding = {
             cityIdentifier: "New York",
@@ -70,7 +74,6 @@ export class SceneViewNewYork extends Component {
                 <SceneView id="newyork">
                     <Scene portalItem={{ id: IDNY }}>
 
-
                     </Scene>
                 </SceneView>
 
@@ -78,7 +81,15 @@ export class SceneViewNewYork extends Component {
                     <CardTitle>A 3D View of Manhattan! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
+                    {/* Form */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
+
             </div>
 
         )
@@ -127,6 +138,13 @@ export class SceneViewParis extends Component {
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
                 </Card>
+
+                <Form>
+                    <FormGroup>
+                        <Label for="exampleText">Text Area</Label>
+                        <Input type="textarea" name="text" id="exampleText" />
+                    </FormGroup>
+                </Form>
             </div>
         )
     }
@@ -145,6 +163,13 @@ export class SceneViewGeneva extends Component {
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button>Submit</Button>
                 </Card>
+
+                <Form>
+                    <FormGroup>
+                        <Label for="exampleText">Text Area</Label>
+                        <Input type="textarea" name="text" id="exampleText" />
+                    </FormGroup>
+                </Form>
             </div>
         )
     }
@@ -234,6 +259,13 @@ export class SceneViewLyon extends Component {
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
                 </Card>
+
+                <Form>
+                    <FormGroup>
+                        <Label for="exampleText">Text Area</Label>
+                        <Input type="textarea" name="text" id="exampleText" />
+                    </FormGroup>
+                </Form>
 
             </div>
         )
