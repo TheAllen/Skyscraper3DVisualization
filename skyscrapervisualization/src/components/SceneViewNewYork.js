@@ -12,7 +12,7 @@ const NY_EXAMPLE = 'd50983f1314141bfb6d57c6f83f2690e'
 const IDNY1 = '6da5b4a4f0214f83963bd3620bea376d' //New York
 const ID_PARIS = '0614ea1f9dd043e9ba157b9c20d3c538' //Paris
 const ID_GENEVA = 'c6f90b19164c4283884361005faea852'
-const ID_LUCERNE = '6043821c854345e4b6d56c9b0765079d'
+const ID_LUCERNE = '60245522611b4992880bf70c205eba8e' //Luzern
 const ID_LYON = 'ba138a72546a46faa94983a4f0eceb95'
 
 export class SceneViewNewYork extends Component {
@@ -159,24 +159,24 @@ export class SceneViewGeneva extends Component {
 
     render() {
         return (
-            <div>
+            <div className="App">
                 <SceneView id="geneva">
                     <Scene portalItem={{ id: ID_GENEVA }}></Scene>
                 </SceneView>
 
-                <Card body className="city-message-form">
+                 <Card body className="city-message-form">
                     <CardTitle>A 3D View of Geneva! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button>Submit</Button>
 
-                    {/* Form */}
+                    
                     <Form >
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
                             <Input type="textarea" name="text" id="exampleText" />
                         </FormGroup>
                     </Form>
-                </Card>
+                </Card> 
 
             </div>
         )
@@ -205,6 +205,13 @@ export class SceneViewLucerne extends Component {
                     <CardTitle>A 3D View of Lucerne! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button>Submit</Button>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
             </div>
         )

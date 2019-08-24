@@ -22,7 +22,7 @@ class App extends Component {
           <Route exact path="/visual" component = {EsriMap} ></Route>
           <Route exact path="/newyork" component = {SceneViewNewYork}></Route>
           <Route exact path="/paris" component = {SceneViewParis}></Route>
-          {/* <Route exact path="/lucerne" component = {SceneViewLucerne}></Route> */}
+          <Route exact path="/lucerne" component = {SceneViewLucerne}></Route>
           <Route exact path="/geneva" component = {SceneViewGeneva}></Route>
           <Route exact path="/lyon" component = {SceneViewLyon}></Route>
         </Router>
