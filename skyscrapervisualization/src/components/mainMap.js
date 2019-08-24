@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import L from 'leaflet';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Map, Marker, Popup, TileLayer, Circle, CircleMarker, Polygon, Polyline, Rectangle } from 'react-leaflet'
-import { Card, Button, CardTitle, CardText, Navbar, NavbarBrand, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownItem, DropdownMenu, NavbarToggler, DropdownToggle } from 'reactstrap';
+import { Card, Button, CardTitle, CardText, Navbar, NavbarBrand, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownItem, DropdownMenu, NavbarToggler, DropdownToggle, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 
@@ -208,6 +208,13 @@ class MainMap extends Component {
                     <CardTitle>Welcome to City 3D</CardTitle>
                     <CardText>What's your favorite city in the world?</CardText>
                     <Button>Submit</Button>
+                    {/* Form */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
             </div>
 

@@ -39,7 +39,7 @@ export class SceneViewNewYork extends Component {
 
     onChange = (e) => {
 
-    } 
+    }
 
 
     onSubmit = (e) => {
@@ -137,20 +137,26 @@ export class SceneViewParis extends Component {
                     <CardTitle>A 3D View of Paris! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
+                    {/* Form */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
-
-                <Form>
-                    <FormGroup>
-                        <Label for="exampleText">Text Area</Label>
-                        <Input type="textarea" name="text" id="exampleText" />
-                    </FormGroup>
-                </Form>
             </div>
         )
     }
 }
 
 export class SceneViewGeneva extends Component {
+
+    constructor() {
+        super();
+    }
+
+
     render() {
         return (
             <div>
@@ -162,14 +168,16 @@ export class SceneViewGeneva extends Component {
                     <CardTitle>A 3D View of Geneva! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button>Submit</Button>
+
+                    {/* Form */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
 
-                <Form>
-                    <FormGroup>
-                        <Label for="exampleText">Text Area</Label>
-                        <Input type="textarea" name="text" id="exampleText" />
-                    </FormGroup>
-                </Form>
             </div>
         )
     }
@@ -209,33 +217,31 @@ export class SceneViewLyon extends Component {
         super();
 
         this.state = {
-            cityIdentifier: "New York",
-            cityMessage: "New York is my favorite City",
-            id: 1,
-            name: "One World Trade Center",
-            city: "New York City",
+
+            name: "Louvre Musuem",
+            city: "Paris",
             state: "New York",
-            address: null,
-            buildingDescription: null,
-            height: 0,
-            floors: 0,
-            funFacts: ""
+            rating: 5,
+            height: 1792,
+            floors: 104,
+            funFacts: "Notre Dame is known as The Old lady",
+            cityIdentifier: "PARIS",
+            cityMessage: "Paris is my favorite City"
         }
     }
 
     onSubmit = (e) => {
         e.preventDefault();
         const newCity = {
+            name: "Lyon Building",
+            city: "Lyon",
+            state: "New York",
+            rating: 4,
+            height: 1792,
+            floors: 104,
+            funFacts: "Lyon is one of the cities in France",
             cityIdentifier: "LYON",
-            cityMessage: "Lyon is one of my favorite Cities",
-            name: "Eiffel Tower",
-            city: "Paris",
-            state: "",
-            address: null,
-            buildingDescription: null,
-            height: 1063,
-            floors: 3,
-            funFacts: "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower."
+            cityMessage: "Lyon is my favorite City"
         }
 
         axios.post('http://localhost:8080/api/skyscraper/', newCity)
@@ -258,14 +264,15 @@ export class SceneViewLyon extends Component {
                     <CardTitle>A 3D View of Lyon! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
+                    {/* Form */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
 
-                <Form>
-                    <FormGroup>
-                        <Label for="exampleText">Text Area</Label>
-                        <Input type="textarea" name="text" id="exampleText" />
-                    </FormGroup>
-                </Form>
 
             </div>
         )
