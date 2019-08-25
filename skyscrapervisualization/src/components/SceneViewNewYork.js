@@ -6,6 +6,8 @@ import { createMessage } from '../Actions/messageAction';
 
 import axios from "axios";
 
+
+
 const ID = 'a0f52995be7d42c1ba9a2b570570feb5' //Original NY
 const IDNY = '9a542f6755274436985617a462ffdf44'
 const NY_EXAMPLE = 'd50983f1314141bfb6d57c6f83f2690e'
@@ -90,6 +92,11 @@ export class SceneViewNewYork extends Component {
                     </Form>
                 </Card>
 
+                <Card body className="weather-card">
+                    <CardTitle>Weather of New York! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
+                </Card>
+
             </div>
 
         )
@@ -145,6 +152,11 @@ export class SceneViewParis extends Component {
                         </FormGroup>
                     </Form>
                 </Card>
+
+                <Card body className="weather-card">
+                    <CardTitle>Weather of Paris! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
+                </Card>
             </div>
         )
     }
@@ -164,19 +176,24 @@ export class SceneViewGeneva extends Component {
                     <Scene portalItem={{ id: ID_GENEVA }}></Scene>
                 </SceneView>
 
-                 <Card body className="city-message-form">
+                <Card body className="city-message-form">
                     <CardTitle>A 3D View of Geneva! </CardTitle>
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button>Submit</Button>
 
-                    
+
                     <Form >
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
                             <Input type="textarea" name="text" id="exampleText" />
                         </FormGroup>
                     </Form>
-                </Card> 
+                </Card>
+
+                <Card body className="weather-card">
+                    <CardTitle>Weather of Geneva! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
+                </Card>
 
             </div>
         )
@@ -212,6 +229,11 @@ export class SceneViewLucerne extends Component {
                             <Input type="textarea" name="text" id="exampleText" />
                         </FormGroup>
                     </Form>
+                </Card>
+
+                <Card body className="weather-card">
+                    <CardTitle>Weather of Luzern! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
                 </Card>
             </div>
         )
@@ -280,6 +302,10 @@ export class SceneViewLyon extends Component {
                     </Form>
                 </Card>
 
+                <Card body className="weather-card">
+                    <CardTitle>Weather of Lyon! </CardTitle>
+                    <CardText>What's your favorite part of the city?</CardText>
+                </Card>
 
             </div>
         )
