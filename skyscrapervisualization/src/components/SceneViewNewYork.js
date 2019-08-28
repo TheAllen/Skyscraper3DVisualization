@@ -90,6 +90,24 @@ export class SceneViewNewYork extends Component {
                             <Input type="textarea" name="text" id="exampleText" />
                         </FormGroup>
                     </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">City</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">State</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
 
                 <Card body className="weather-card">
