@@ -169,6 +169,25 @@ export class SceneViewParis extends Component {
                             <Input type="textarea" name="text" id="exampleText" />
                         </FormGroup>
                     </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">City</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">State</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                 </Card>
 
                 <Card body className="weather-card">
@@ -200,6 +219,25 @@ export class SceneViewGeneva extends Component {
                     <Button>Submit</Button>
 
 
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">City</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">State</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                     <Form >
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
@@ -241,6 +279,25 @@ export class SceneViewLucerne extends Component {
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button>Submit</Button>
 
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">City</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">State</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                     <Form >
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
@@ -312,6 +369,25 @@ export class SceneViewLyon extends Component {
                     <CardText>What's your favorite part of the city?</CardText>
                     <Button onClick={this.onSubmit}>Submit</Button>
                     {/* Form */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">Description</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">City</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            <Label for="exampleText">State</Label>
+                            <Input type="textarea" name="text" id="exampleText" />
+                        </FormGroup>
+                    </Form>
                     <Form >
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
