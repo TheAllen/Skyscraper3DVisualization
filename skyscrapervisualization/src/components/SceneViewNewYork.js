@@ -87,7 +87,7 @@ export class SceneViewNewYork extends Component {
                     <Form >
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            <Input type="textarea" name="text" id="exampleText" placeholder="Enter a description of the city!"/>
                         </FormGroup>
                     </Form>
                     <Form >

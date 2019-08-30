@@ -177,7 +177,7 @@ class MainMap extends Component {
                     </Marker>
                     <Circle center={lucerneLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
                         <Popup center={position}>
-                            Click to see a <br /> 3D visualization of Lucerne
+                            Click to see a <br /> 3D visualization of Luzern
                         </Popup>
                     </Circle>
 
@@ -213,6 +213,7 @@ class MainMap extends Component {
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
                             <Input type="textarea" name="text" id="exampleText" />
+                            <Input placeholder="Enter a city you want to see in 3D"/>
                         </FormGroup>
                     </Form>
                 </Card>
