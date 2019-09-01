@@ -61,9 +61,23 @@ export class SceneViewNewYork extends Component {
             floors: 104,
             funFacts: "One World Trade Center is the main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City"
         }
-        // createMessage(newBuilding, this.props.history);
+        
+        const inputBuilding = {
+            cityIdentifier: this.state.cityIdentifier,
+            cityMessage: this.state.cityMessage,
+            name: this.state.name,
+            city: this.state.city,
+            state: this.state.state,
+            address: null,
+            buildingDescription: this.state.buildingDescription,
+            height: this.state.height,
+            floors: this.state.floors,
+            funFacts: this.state.cityMessage
+        }
 
-        axios.post('http://localhost:8080/api/skyscraper/', newBuilding)
+        console.log(inputBuilding);
+
+        axios.post('http://localhost:8080/api/skyscraper/', inputBuilding)
             .then(res => {
                 console.log(res);
                 this.history.push("/");
@@ -101,59 +115,99 @@ export class SceneViewNewYork extends Component {
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">City</Label> */}
-                            <Input name="text" id="exampleText" placeholder="City"/>
+                            <Input 
+                            name="city" 
+                            id="exampleText" 
+                            placeholder="City"
+                            onChange={this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">State</Label> */}
-                            <Input name="text" id="exampleText" placeholder="State"/>
+                            <Input 
+                            name="state" 
+                            id="exampleText" 
+                            placeholder="State"
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">State</Label> */}
-                            <Input name="text" id="exampleText" placeholder="Rating"/>
+                            
+                            <Input 
+                            name="rating" 
+                            id="exampleText" 
+                            placeholder="Rating"
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">State</Label> */}
-                            <Input name="text" id="exampleText" placeholder="height"/>
+                            
+                            <Input 
+                            name="height" 
+                            id="exampleText" 
+                            placeholder="height"
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">State</Label> */}
-                            <Input name="text" id="exampleText" placeholder="floors"/>
+                            
+                            <Input 
+                            name="floors" 
+                            id="exampleText" 
+                            placeholder="floors"
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
                     {/* Fun fact */}
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">Description</Label> */}
-                            <Input type="textarea" name="text" id="exampleText" placeholder="Enter a description of the city"/>
+                            
+                            <Input 
+                            type="textarea" 
+                            name="buildingDescription" 
+                            id="exampleText" 
+                            placeholder="Enter a description of the city"
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">Description</Label> */}
-                            <Input name="text" id="exampleText" placeholder="City Identifier" />
+                            
+                            <Input 
+                            name="cityIdentifier" 
+                            id="exampleText" 
+                            placeholder="City Identifier" 
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            {/* <Label for="exampleText">Description</Label> */}
-                            <Input type="textarea" name="text" id="exampleText" placeholder="City message" />
+                            
+                            <Input 
+                            type="textarea" 
+                            name="cityMessage" 
+                            id="exampleText" 
+                            placeholder="City message" 
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
