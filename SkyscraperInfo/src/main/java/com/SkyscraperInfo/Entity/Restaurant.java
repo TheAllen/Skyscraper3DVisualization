@@ -6,7 +6,6 @@ import javax.validation.constraints.Size;
 @Entity
 public class Restaurant extends Building {
 	
-	
 	private int rating;
 	
 	private String restaurantDescription;

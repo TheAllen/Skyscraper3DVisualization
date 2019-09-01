@@ -36,11 +36,14 @@ export class SceneViewNewYork extends Component {
             funFacts: ""
         }
 
-        //this.onSubmit = this.onSubmit.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     onChange = (e) => {
 
+        this.setState({[e.target.name] : e.target.value})
+        console.log(e.target.name +  ":" + e.target.value);
     }
 
 
@@ -81,33 +84,80 @@ export class SceneViewNewYork extends Component {
 
                 <Card body className="city-message-form">
                     <CardTitle>A 3D View of Manhattan! </CardTitle>
-                    <CardText>What's your favorite part of the city?</CardText>
-                    <Button onClick={this.onSubmit}>Submit</Button>
+                    
                     {/* Form */}
+
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">Description</Label>
-                            <Input type="textarea" name="text" id="exampleText" placeholder="Enter a description of the city!"/>
+                            {/* <Label for="exampleText">Name</Label> */}
+                            <Input 
+                            name="name" 
+                            id="exampleText" 
+                            placeholder="Enter a name of a building"
+                            onChange = {this.onChange}
+                            />
                         </FormGroup>
                     </Form>
+
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">City</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            {/* <Label for="exampleText">City</Label> */}
+                            <Input name="text" id="exampleText" placeholder="City"/>
                         </FormGroup>
                     </Form>
+
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">State</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            {/* <Label for="exampleText">State</Label> */}
+                            <Input name="text" id="exampleText" placeholder="State"/>
                         </FormGroup>
                     </Form>
+
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">Description</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            {/* <Label for="exampleText">State</Label> */}
+                            <Input name="text" id="exampleText" placeholder="Rating"/>
                         </FormGroup>
                     </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            {/* <Label for="exampleText">State</Label> */}
+                            <Input name="text" id="exampleText" placeholder="height"/>
+                        </FormGroup>
+                    </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            {/* <Label for="exampleText">State</Label> */}
+                            <Input name="text" id="exampleText" placeholder="floors"/>
+                        </FormGroup>
+                    </Form>
+
+                    {/* Fun fact */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            {/* <Label for="exampleText">Description</Label> */}
+                            <Input type="textarea" name="text" id="exampleText" placeholder="Enter a description of the city"/>
+                        </FormGroup>
+                    </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            {/* <Label for="exampleText">Description</Label> */}
+                            <Input name="text" id="exampleText" placeholder="City Identifier" />
+                        </FormGroup>
+                    </Form>
+
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+                            {/* <Label for="exampleText">Description</Label> */}
+                            <Input type="textarea" name="text" id="exampleText" placeholder="City message" />
+                        </FormGroup>
+                    </Form>
+
+                    <Button onClick={this.onSubmit}>Submit</Button>
                 </Card>
 
                 <Card body className="weather-card">
@@ -125,6 +175,18 @@ export class SceneViewParis extends Component {
 
     constructor() {
         super();
+
+        this.state = {
+            name: "Louvre Musuem",
+            city: "Paris",
+            state: "New York",
+            rating: 5,
+            height: 1792,
+            floors: 104,
+            funFacts: "Notre Dame is known as The Old lady",
+            cityIdentifier: "PARIS",
+            cityMessage: "Paris is my favorite City"
+        }
     }
 
     onSubmit(e) {
@@ -139,6 +201,7 @@ export class SceneViewParis extends Component {
             funFacts: "Notre Dame is known as The Old lady",
             cityIdentifier: "PARIS",
             cityMessage: "Paris is my favorite City"
+            
         }
         // createMessage(newBuilding, this.props.history);
 
