@@ -16,6 +16,8 @@ const ID_PARIS = '0614ea1f9dd043e9ba157b9c20d3c538' //Paris
 const ID_GENEVA = 'c6f90b19164c4283884361005faea852'
 const ID_LUCERNE = '60245522611b4992880bf70c205eba8e' //Luzern
 const ID_LYON = 'ba138a72546a46faa94983a4f0eceb95'
+const ID_MONTREAL = '63a16e0c9f364d0fab9d55f40bf71771'
+const ID_BOSTON = '1483a59c30e14d1d8640e6c52133296f'
 
 export class SceneViewNewYork extends Component {
 
@@ -42,8 +44,8 @@ export class SceneViewNewYork extends Component {
 
     onChange = (e) => {
 
-        this.setState({[e.target.name] : e.target.value})
-        console.log(e.target.name +  ":" + e.target.value);
+        this.setState({ [e.target.name]: e.target.value })
+        console.log(e.target.name + ":" + e.target.value);
     }
 
 
@@ -61,7 +63,7 @@ export class SceneViewNewYork extends Component {
             floors: 104,
             funFacts: "One World Trade Center is the main building of the rebuilt World Trade Center complex in Lower Manhattan, New York City"
         }
-        
+
         const inputBuilding = {
             cityIdentifier: this.state.cityIdentifier,
             cityMessage: this.state.cityMessage,
@@ -98,75 +100,75 @@ export class SceneViewNewYork extends Component {
 
                 <Card body className="city-message-form">
                     <CardTitle>A 3D View of Manhattan! </CardTitle>
-                    
+
                     {/* Form */}
 
                     <Form >
                         <FormGroup className="cityMessage">
                             {/* <Label for="exampleText">Name</Label> */}
-                            <Input 
-                            name="name" 
-                            id="exampleText" 
-                            placeholder="Enter a name of a building"
-                            onChange = {this.onChange}
+                            <Input
+                                name="name"
+                                id="exampleText"
+                                placeholder="Enter a name of a building"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Input 
-                            name="city" 
-                            id="exampleText" 
-                            placeholder="City"
-                            onChange={this.onChange}
+                            <Input
+                                name="city"
+                                id="exampleText"
+                                placeholder="City"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Input 
-                            name="state" 
-                            id="exampleText" 
-                            placeholder="State"
-                            onChange = {this.onChange}
+                            <Input
+                                name="state"
+                                id="exampleText"
+                                placeholder="State"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            
-                            <Input 
-                            name="rating" 
-                            id="exampleText" 
-                            placeholder="Rating"
-                            onChange = {this.onChange}
+
+                            <Input
+                                name="rating"
+                                id="exampleText"
+                                placeholder="Rating"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            
-                            <Input 
-                            name="height" 
-                            id="exampleText" 
-                            placeholder="height"
-                            onChange = {this.onChange}
+
+                            <Input
+                                name="height"
+                                id="exampleText"
+                                placeholder="height"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            
-                            <Input 
-                            name="floors" 
-                            id="exampleText" 
-                            placeholder="floors"
-                            onChange = {this.onChange}
+
+                            <Input
+                                name="floors"
+                                id="exampleText"
+                                placeholder="floors"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
@@ -174,25 +176,25 @@ export class SceneViewNewYork extends Component {
                     {/* Fun fact */}
                     <Form >
                         <FormGroup className="cityMessage">
-                            
-                            <Input 
-                            type="textarea" 
-                            name="buildingDescription" 
-                            id="exampleText" 
-                            placeholder="Enter a description of the city"
-                            onChange = {this.onChange}
+
+                            <Input
+                                type="textarea"
+                                name="buildingDescription"
+                                id="exampleText"
+                                placeholder="Enter a description of the city"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            
-                            <Input 
-                            name="cityIdentifier" 
-                            id="exampleText" 
-                            placeholder="City Identifier" 
-                            onChange = {this.onChange}
+
+                            <Input
+                                name="cityIdentifier"
+                                id="exampleText"
+                                placeholder="City Identifier"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
@@ -200,13 +202,13 @@ export class SceneViewNewYork extends Component {
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            
-                            <Input 
-                            type="textarea" 
-                            name="cityMessage" 
-                            id="exampleText" 
-                            placeholder="City message" 
-                            onChange = {this.onChange}
+
+                            <Input
+                                type="textarea"
+                                name="cityMessage"
+                                id="exampleText"
+                                placeholder="City message"
+                                onChange={this.onChange}
                             />
                         </FormGroup>
                     </Form>
@@ -255,7 +257,7 @@ export class SceneViewParis extends Component {
             funFacts: "Notre Dame is known as The Old lady",
             cityIdentifier: "PARIS",
             cityMessage: "Paris is my favorite City"
-            
+
         }
         // createMessage(newBuilding, this.props.history);
 
@@ -277,34 +279,120 @@ export class SceneViewParis extends Component {
 
                 <Card body className="city-message-form">
                     <CardTitle>A 3D View of Paris! </CardTitle>
-                    <CardText>What's your favorite part of the city?</CardText>
-                    <Button onClick={this.onSubmit}>Submit</Button>
+
                     {/* Form */}
+
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">Description</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            {/* <Label for="exampleText">Name</Label> */}
+                            <Input
+                                name="name"
+                                id="exampleText"
+                                placeholder="Enter a name of a building"
+                                onChange={this.onChange}
+                            />
                         </FormGroup>
                     </Form>
 
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">City</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            <Input
+                                name="city"
+                                id="exampleText"
+                                placeholder="City"
+                                onChange={this.onChange}
+                            />
                         </FormGroup>
                     </Form>
+
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">State</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+                            <Input
+                                name="state"
+                                id="exampleText"
+                                placeholder="State"
+                                onChange={this.onChange}
+                            />
                         </FormGroup>
                     </Form>
+
                     <Form >
                         <FormGroup className="cityMessage">
-                            <Label for="exampleText">Description</Label>
-                            <Input type="textarea" name="text" id="exampleText" />
+
+                            <Input
+                                name="rating"
+                                id="exampleText"
+                                placeholder="Rating"
+                                onChange={this.onChange}
+                            />
                         </FormGroup>
                     </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+
+                            <Input
+                                name="height"
+                                id="exampleText"
+                                placeholder="height"
+                                onChange={this.onChange}
+                            />
+                        </FormGroup>
+                    </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+
+                            <Input
+                                name="floors"
+                                id="exampleText"
+                                placeholder="floors"
+                                onChange={this.onChange}
+                            />
+                        </FormGroup>
+                    </Form>
+
+                    {/* Fun fact */}
+                    <Form >
+                        <FormGroup className="cityMessage">
+
+                            <Input
+                                type="textarea"
+                                name="buildingDescription"
+                                id="exampleText"
+                                placeholder="Enter a description of the city"
+                                onChange={this.onChange}
+                            />
+                        </FormGroup>
+                    </Form>
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+
+                            <Input
+                                name="cityIdentifier"
+                                id="exampleText"
+                                placeholder="City Identifier"
+                                onChange={this.onChange}
+                            />
+                        </FormGroup>
+                    </Form>
+
+
+                    <Form >
+                        <FormGroup className="cityMessage">
+
+                            <Input
+                                type="textarea"
+                                name="cityMessage"
+                                id="exampleText"
+                                placeholder="City message"
+                                onChange={this.onChange}
+                            />
+                        </FormGroup>
+                    </Form>
+
+                    <Button onClick={this.onSubmit}>Submit</Button>
                 </Card>
 
                 <Card body className="weather-card">
