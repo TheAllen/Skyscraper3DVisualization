@@ -611,5 +611,39 @@ export class SceneViewLyon extends Component {
     }
 }
 
+export class SceneViewBoston extends Component {
+
+    constructor() {
+        super();
+    }
+
+    render() {
+        return(
+            <div className="App">
+                <SceneView id="lyon">
+                    <Scene portalItem={{ id: ID_BOSTON }}></Scene>
+                </SceneView>
+            </div>
+        )
+    }
+}
+
+export class SceneViewMontreal extends Component {
+
+    constructor() {
+        super();
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <SceneView id="lyon">
+                    <Scene portalItem={{ id: ID_MONTREAL }}></Scene>
+                </SceneView>
+            </div>
+        )
+    }
+}
+
 
 

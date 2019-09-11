@@ -93,6 +93,16 @@ class MainMap extends Component {
         this.props.history.push(path);
     }
 
+    onSceneViewBoston = () => {
+        const path = '/boston';
+        this.props.history.push(path);
+    }
+
+    onSceneViewMontreal = () => {
+        const path = '/montreal';
+        this.props.history.push(path);
+    }
+
     render() {
 
         const position = [this.state.location.lat, this.state.location.lng]
@@ -102,6 +112,8 @@ class MainMap extends Component {
         const genevaLatLng = [46.2044, 6.1432]
         const lucerneLatLng = [47.0502, 8.3093]
         const lyonLatLng = [45.7640, 4.8357]
+        const bostonLatLng = [42.3601, -71.0589]
+        const montrealLatLng = [45.5017, -73.5673]
 
         return (
             <div className="App">
@@ -200,6 +212,24 @@ class MainMap extends Component {
                         </Popup>
                     </Circle>
 
+                    <Marker icon={myIcon} position={bostonLatLng} onClick={this.onSceneViewBoston}>
+                        <Popup onClick={this.clickPopup}>Boston, MA</Popup>
+                    </Marker>
+                    <Circle center={bostonLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
+                        <Popup center={position}>
+                            Click to see a <br /> 3D visualization of Lyon
+                        </Popup>
+                    </Circle>
+
+                    <Marker icon={myIcon} position={montrealLatLng} onClick={this.onSceneViewMontreal}>
+                        <Popup onClick={this.clickPopup}>Montreal, Canada</Popup>
+                    </Marker>
+                    <Circle center={montrealLatLng} fillColor="blue" radius={3500} onClick={this.onClickMarker}>
+                        <Popup center={position}>
+                            Click to see a <br /> 3D visualization of Lyon
+                        </Popup>
+                    </Circle>
+
 
                 </Map>
 
@@ -213,7 +243,7 @@ class MainMap extends Component {
                         <FormGroup className="cityMessage">
                             <Label for="exampleText">Description</Label>
                             <Input type="textarea" name="text" id="exampleText" />
-                            <Input placeholder="Enter a city you want to see in 3D"/>
+                            <Input placeholder="Enter a city you want to see in 3D" />
                         </FormGroup>
                     </Form>
                 </Card>
