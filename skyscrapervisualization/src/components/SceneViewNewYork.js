@@ -270,6 +270,12 @@ export class SceneViewParis extends Component {
             })
     }
 
+    onChange = (e) => {
+
+        this.setState({ [e.target.name]: e.target.value })
+        console.log(e.target.name + ":" + e.target.value);
+    }
+
     render() {
         return (
             <div className="App">
@@ -408,6 +414,18 @@ export class SceneViewGeneva extends Component {
 
     constructor() {
         super();
+    }
+
+    onSubmit = () => {
+        const newBuilding = {
+
+        }
+    }
+
+    onChange = (e) => {
+
+        this.setState({ [e.target.name]: e.target.value })
+        console.log(e.target.name + ":" + e.target.value);
     }
 
 
