@@ -243,25 +243,27 @@ export class SceneViewParis extends Component {
             cityIdentifier: "PARIS",
             cityMessage: "Paris is my favorite City"
         }
+
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     onSubmit(e) {
         e.preventDefault();
-        const newBuilding = {
-            name: "Louvre Musuem",
-            city: "Paris",
-            state: "New York",
-            rating: 5,
-            height: 1792,
-            floors: 104,
-            funFacts: "Notre Dame is known as The Old lady",
-            cityIdentifier: "PARIS",
-            cityMessage: "Paris is my favorite City"
-
+        const inputBuilding = {
+            cityIdentifier: this.state.cityIdentifier,
+            cityMessage: this.state.cityMessage,
+            name: this.state.name,
+            city: this.state.city,
+            state: this.state.state,
+            address: null,
+            buildingDescription: this.state.buildingDescription,
+            height: this.state.height,
+            floors: this.state.floors,
+            funFacts: this.state.cityMessage
         }
         // createMessage(newBuilding, this.props.history);
 
-        axios.post('http://localhost:8080/api/skyscraper/', newBuilding)
+        axios.post('http://localhost:8080/api/skyscraper/', inputBuilding)
             .then(res => {
                 console.log(res);
             })
@@ -414,11 +416,35 @@ export class SceneViewGeneva extends Component {
 
     constructor() {
         super();
+
+        this.state = {
+            cityIdentifier: "Geneva",
+            cityMessage: "Geneva is my favorite City",
+            id: 1,
+            name: "St. Pierre Cathedral",
+            city: "Geneva",
+            state: "Geneva",
+            address: null,
+            buildingDescription: null,
+            height: 0,
+            floors: 0,
+            funFacts: ""
+        }
     }
 
     onSubmit = () => {
         const newBuilding = {
-
+            cityIdentifier: "Geneva",
+            cityMessage: "Geneva is my favorite City",
+            id: 1,
+            name: "St. Pierre Cathedral",
+            city: "Geneva",
+            state: "Geneva",
+            address: null,
+            buildingDescription: null,
+            height: 0,
+            floors: 0,
+            funFacts: ""
         }
     }
 
