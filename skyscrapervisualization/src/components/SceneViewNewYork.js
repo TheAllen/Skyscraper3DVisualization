@@ -594,10 +594,52 @@ export class SceneViewLucerne extends Component {
 
     constructor() {
         super();
+
+        this.state = {
+            cityIdentifier: "Geneva",
+            cityMessage: "Geneva is my favorite City",
+            id: 1,
+            name: "St. Pierre Cathedral",
+            city: "Geneva",
+            state: "Geneva",
+            address: null,
+            buildingDescription: null,
+            height: 0,
+            floors: 0,
+            funFacts: ""
+        }
+
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     onSubmit(e) {
+        let buildingInfo = {
+            cityIdentifier: this.state.cityIdentifier,
+            cityMessage: this.state.cityMessage,
+            name: this.state.name,
+            city: this.state.city,
+            state: this.state.state,
+            address: null,
+            buildingDescription: this.state.buildingDescription,
+            height: this.state.height,
+            floors: this.state.floors,
+            funFacts: this.state.cityMessage
+            
+        }
 
+        axios.post('http://localhost:8080/api/skyscraper/', buildingInfo)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(error => {
+                console.log(error.response)
+            })
+    }
+
+    onChange(e) {
+        this.setState({[e.target.name] : e.target.value});
+        console.log(this.state);
     }
 
 
