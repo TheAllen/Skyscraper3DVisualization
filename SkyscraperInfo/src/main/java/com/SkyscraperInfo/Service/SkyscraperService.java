@@ -12,9 +12,20 @@ public class SkyscraperService {
 	@Autowired
 	private SkyscraperRepository skyscraperRepository;
 	
-	public Skyscraper addSkyscraper(Skyscraper skyscraper) {
-		Skyscraper s = skyscraperRepository.save(skyscraper);
-		return s;
+	public Skyscraper addOrUpdateSkyscraper(Skyscraper skyscraper) {
+		
+		if(skyscraper.getCityIdentifier() != null) {
+			
+			Skyscraper existSkyscraper = skyscraperRepository.findByCityIdentifier(skyscraper.getCityIdentifier());
+			
+			if(existSkyscraper != null) {
+				return null;
+			}			
+			
+		}
+		return skyscraperRepository.save(skyscraper);
+
+		
 	}
 	
 	public Iterable<Skyscraper> getAll() {

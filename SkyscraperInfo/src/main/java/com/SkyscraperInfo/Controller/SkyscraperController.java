@@ -41,7 +41,8 @@ public class SkyscraperController {
 			return errorMap;
 		}
 		
-		Skyscraper newSkyscraper = skyscraperService.addSkyscraper(skyscraper);
+		Skyscraper newSkyscraper = skyscraperService.addOrUpdateSkyscraper(skyscraper);
+		
 		
 		return new ResponseEntity<Skyscraper> (newSkyscraper, HttpStatus.CREATED);
 	}
