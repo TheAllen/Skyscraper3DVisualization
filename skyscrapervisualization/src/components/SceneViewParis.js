@@ -26,7 +26,27 @@ export default class SceneViewParis extends Component {
     }
 
     onSubmit(e) {
+        e.preventDefault();
+        const inputInfo = {
+            cityIdentifier: this.state.cityIdentifier,
+            cityMessage: this.state.cityMessage,
+            name: this.state.name,
+            city: this.state.city,
+            state: this.state.state,
+            address: null,
+            buildingDescription: this.state.buildingDescription,
+            height: this.state.height,
+            floors: this.state.floors,
+            funFacts: this.state.cityMessage
+        }
 
+        axios.post('http://localhost:8080/api/skyscraper/', inputInfo)
+        .this(res => {
+            console.log(res);
+        })
+        .catch(error => {
+            console.log(error.response);
+        })
     }
 
     onChange(e) {
