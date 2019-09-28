@@ -126,7 +126,7 @@ class MainMap extends Component {
                                 <NavLink href="/components/">Components</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="https://github.com/TheAllen/Skyscraper3DVisualization://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                                <NavLink href="https://github.com/TheAllen/Skyscraper3DVisualization">GitHub</NavLink>
                             </NavItem>
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
