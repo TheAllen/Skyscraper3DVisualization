@@ -21,6 +21,7 @@ public class SkyscraperService {
 			if(existSkyscraper != null) {
 				return null;
 			}			
+			return existSkyscraper;
 			
 		}
 		return skyscraperRepository.save(skyscraper);
