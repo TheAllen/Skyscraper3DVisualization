@@ -19,7 +19,7 @@ public class SkyscraperService {
 			Skyscraper existSkyscraper = skyscraperRepository.findByCityIdentifier(skyscraper.getCityIdentifier());
 			
 			if(existSkyscraper != null) {
-				return null;
+				return existSkyscraper;
 			}			
 			return existSkyscraper;
 			
