@@ -1,4 +1,4 @@
-# Skyscraper3DVisualization
+# City 3D Visualization
 A full-stack 3D visualization app
 
 Allow users to write about their favorite things about the city and provide popular city attractions.
